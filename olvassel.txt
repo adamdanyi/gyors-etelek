@@ -1,5 +1,5 @@
 Készítő neve: Dányi Ádám
-Működő weboldal URL címe: 
+Működő weboldal URL címe: https://adamdanyi.github.io/gyors-etelek/
 
 Weboldal témája:
 A weboldal gyors, olcsó és egyszerű recepteket gyűjt össze kifejezetten egyetemisták számára, kategorizálva és szűrhetően. A cél, hogy a diákok időt és pénzt spóroljanak a főzésen vizsgaidőszakban és a hétköznapokon egyaránt.
@@ -20,4 +20,5 @@ Google Fonts (HTML head-ben importálva):
 
 
 Felhasznált külső források:
+
 - Ikonok: Emoji karakterkészlet és saját SVG favicon.
