@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Dányi Ádám">
+    <meta name="description" content="Teljes receptlistánk kategorizálva, szűrőkkel és adagkalkulátorral. Reggeli, ebéd, vacsora és snack ötletek egy helyen.">
+    <title>Receptlista - Gyors Ételek</title>
+    <script src="js/calculator.js" defer></script>
+    <script src="js/main.js" defer></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double+Ink:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+</head>
+
+<body>
+    
+        <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo" >🍜 Gyors Ételek</a>
+            <button class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Főoldal</a></li>
+                <li><a href="receptek.html " class="active" >Receptlista</a></li>
+                <li><a href="blog.html" >Blog</a></li>
+                <li><a href="kapcsolat.html" >Kapcsolat</a></li>
+            </ul>
+        </div>
+    </nav>
+
+        <header>
+            <div class="page-header">
+                <h1>Receptlista</h1>
+                <p>Minden receptünk egy helyen - válassz kedvedre!</p>
+                <p>Kattints a receptre az elkészítési útmutatóhoz</p>
+            </div>
+        </header>
+        <div id="recipe-modal" class="modal-overlay">
+    <div class="modal-content">
+        <button class="modal-close">&times;</button>
+        
+        <h2 id="modal-title">Recept Címe</h2>
+        
+        <div class="calculator-box">
+            <label for="servings-input">Hány főre főzöl?</label>
+            <div class="calc-controls">
+                <button id="dec-servings">-</button>
+                <input type="number" id="servings-input" value="1" min="1" max="10">
+                <button id="inc-servings">+</button>
+            </div>
+        </div>
+
+        <div class="modal-body">
+            <div class="ingredients-section">
+                <h3>Hozzávalók 🛒</h3>
+                <ul id="modal-ingredients">
+                    </ul>
+            </div>
+            
+            <div class="steps-section">
+                <h3>Elkészítés 👨‍🍳</h3>
+                <ol id="modal-steps">
+                    </ol>
+            </div>
+        </div>
+    </div>
+</div>
+        <main>
+            <div class="filter-container">
+            <button class="filter-btn active" data-filter="all">Összes</button>
+            <button class="filter-btn" data-filter="reggeli">Reggeli</button>
+            <button class="filter-btn" data-filter="ebed">Ebéd</button>
+            <button class="filter-btn" data-filter="vacsora">Vacsora</button>
+            <button class="filter-btn" data-filter="snack">Snack</button>
+            </div>
+
+<div class="recipe-grid">
+
+    <div id="rantotta" class="recipe-card" data-category="reggeli" data-id="rantotta">
+        <div class="recipe-image">🍳</div>
+        <div class="recipe-content">
+            <h3>Klasszikus Rántotta</h3>
+            <p>Hagymával, pirospaprikával, ahogy nagymama csinálta.</p>
+            <div class="recipe-meta">
+                <span>⏱️ 5 perc</span>
+                <span>💰 300 Ft</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="recipe-card" data-category="reggeli" data-id="bundaskenyer">
+        <div class="recipe-image">🍞</div>
+        <div class="recipe-content">
+            <h3>Bundáskenyér</h3>
+            <p>A szikkadt kenyér megmentője. Tejföllel a legjobb!</p>
+            <div class="recipe-meta">
+                <span>⏱️ 10 perc</span>
+                <span>💰 250 Ft</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="recipe-card" data-category="reggeli" data-id="zabkasa">
+        <div class="recipe-image">🥣</div>
+        <div class="recipe-content">
+            <h3>Almás-fahéjas Zabkása</h3>
+            <p>Egészséges energia egész délelőttre. Vegán is lehet.</p>
+            <div class="recipe-meta">
+                <span>⏱️ 5 perc</span>
+                <span>💰 200 Ft</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="recipe-card" data-category="reggeli" data-id="bananos_palacsinta">
+        <div class="recipe-image">🥞</div>
+        <div class="recipe-content">
+            <h3>Banános Palacsinta</h3>
+            <p>Cukormentes, lisztmentes, csak tojás és banán.</p>
+            <div class="recipe-meta">
+                <span>⏱️ 15 perc</span>
+                <span>💰 400 Ft</span>
+            </div>
+        </div>
+    </div>
+
+    <div  id="carbonara" class="recipe-card" data-category="ebed" data-id="carbonara">
+        <div class="recipe-image">🍝</div>
+        <div class="recipe-content">
+            <h3>Carbonara (Diák verzió)</h3>
+            <p>Tejszínes-baconös tészta, ami 15 perc alatt kész.</p>
+            <div class="recipe-meta">
+                <span>⏱️ 15 perc</span>
+                <span>💰 800 Ft</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="recipe-card" data-category="ebed" data-id="sajtos_tejes">
+        <div class="recipe-image">🧀</div>
+        <div class="recipe-content">
+            <h3>Sajtos-Tejfölös Tészta</h3>
+            <p>A kollégiumi étkezés alapköve. Sok sajttal!</p>
+            <div class="recipe-meta">
+                <span>⏱️ 12 perc</span>
+                <span>💰 500 Ft</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="recipe-card" data-category="ebed" data-id="pestos_teszta">
+        <div class="recipe-image">🌿</div>
+        <div class="recipe-content">
+            <h3>Pestós Tészta</h3>
+            <p>Egy üveg pesto, tészta és kész a gourmet ebéd.</p>
+            <div class="recipe-meta">
+                <span>⏱️ 10 perc</span>
+                <span>💰 700 Ft</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="recipe-card" data-category="ebed" data-id="chili_con_carne">
+        <div class="recipe-image">🥘</div>
+        <div class="recipe-content">
+            <h3>Chili con Carne</h3>
+            <p>Kiadós, csípős babos hús, ami másnap még finomabb.</p>
+            <div class="recipe-meta">
+                <span>⏱️ 30 perc</span>
+                <span>💰 1200 Ft</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="recipe-card" data-category="ebed" data-id="tonhalas_teszta">
+        <div class="recipe-image">🐟</div>
+        <div class="recipe-content">
+            <h3>Tonhalas Tészta</h3>
+            <p>Konzervhal, paradicsomszósz és tészta. Életmentő.</p>
+            <div class="recipe-meta">
+                <span>⏱️ 15 perc</span>
+                <span>💰 900 Ft</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="gyros" class="recipe-card" data-category="vacsora" data-id="gyros">
+        <div class="recipe-image">🥙</div>
+        <div class="recipe-content">
+            <h3>Gyros Tortilla</h3>
+            <p>Csirkemell csíkok, zöldségek és öntet tekerve.</p>
+            <div class="recipe-meta">
+                <span>⏱️ 10 perc</span>
+                <span>💰 900 Ft</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="recipe-card" data-category="vacsora" data-id="melegszendvics">
+        <div class="recipe-image">🥪</div>
+        <div class="recipe-content">
+            <h3>Melegszendvics</h3>
+            <p>A maradékok legjobb felhasználási módja a sütőben.</p>
+            <div class="recipe-meta">
+                <span>⏱️ 10 perc</span>
+                <span>💰 400 Ft</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="recipe-card" data-category="vacsora" data-id="gorog_salata">
+        <div class="recipe-image">🥗</div>
+        <div class="recipe-content">
+            <h3>Görög Saláta</h3>
+            <p>Friss zöldségek és feta sajt. Könnyű vacsora.</p>
+            <div class="recipe-meta">
+                <span>⏱️ 10 perc</span>
+                <span>💰 800 Ft</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="recipe-card" data-category="vacsora" data-id="smack_leves">
+        <div class="recipe-image">🍜</div>
+        <div class="recipe-content">
+            <h3>Felturbózott Smack Leves</h3>
+            <p>Adj hozzá tojást és újhagymát, máris kész a ramen.</p>
+            <div class="recipe-meta">
+                <span>⏱️ 5 perc</span>
+                <span>💰 350 Ft</span>
+            </div>
+        </div>
+    </div>
+<div class="recipe-card" data-category="snack" data-id="popcorn">
+        <div class="recipe-image">🍿</div>
+        <div class="recipe-content">
+            <h3>Mikrós Popcorn Extra</h3>
+            <p>Vajjal és egy kis reszelt sajttal felturbózva.</p>
+            <div class="recipe-meta">
+                <span>⏱️ 3 perc</span>
+                <span>💰 200 Ft</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="recipe-card" data-category="snack" data-id="alma_mogyorovaj">
+        <div class="recipe-image">🍎</div>
+        <div class="recipe-content">
+            <h3>Almaszeletek Mogyoróvajjal</h3>
+            <p>Egészséges, fehérjedús nasi tanulás mellé.</p>
+            <div class="recipe-meta">
+                <span>⏱️ 2 perc</span>
+                <span>💰 150 Ft</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="recipe-card" data-category="snack" data-id="diakcsemege">
+        <div class="recipe-image">🥜</div>
+        <div class="recipe-content">
+            <h3>Diákcsemege Mix</h3>
+            <p>Mazsola, mogyoró és csokidarabkák saját keverésben.</p>
+            <div class="recipe-meta">
+                <span>⏱️ 1 perc</span>
+                <span>💰 400 Ft</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="recipe-card" data-category="snack" data-id="bananturmix">
+        <div class="recipe-image">🥤</div>
+        <div class="recipe-content">
+            <h3>Banánturmix</h3>
+            <p>Tejjel vagy növényi itallal, laktató finomság.</p>
+            <div class="recipe-meta">
+                <span>⏱️ 3 perc</span>
+                <span>💰 150 Ft</span>
+            </div>
+        </div>
+    </div>
+</div>
+        </main>
+        <footer>
+    <div class="footer-container">
+        
+        <div class="footer-col">
+            <h3>🍜 Gyors Ételek</h3>
+            <p>Olcsó, gyors és finom receptek egyetemistáknak, hogy több idő maradjon a tanulásra (vagy a pihenésre). 😉</p>
+        </div>
+
+        <div class="footer-col">
+            <h4>Hasznos Linkek</h4>
+            <ul>
+                <li><a href="index.html">Főoldal</a></li>
+                <li><a href="receptek.html">Receptlista</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="kapcsolat.html">Kapcsolat</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>Kövess minket</h4>
+            <div class="social-links">
+                <a href="#" title="Facebook">f</a>
+                <a href="#" title="Instagram">ig</a>
+                <a href="#" title="TikTok">tt</a>
+            </div>
+            <p>📧 info@gyorsetelek.hu</p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>2025 Gyors ételek</p>
+    </div>
+</footer>
+
+
+
+</body>
+</html>

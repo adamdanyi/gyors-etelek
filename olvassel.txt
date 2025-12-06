@@ -1,0 +1,23 @@
+Készítő neve: Dányi Ádám
+Működő weboldal URL címe: 
+
+Weboldal témája:
+A weboldal gyors, olcsó és egyszerű recepteket gyűjt össze kifejezetten egyetemisták számára, kategorizálva és szűrhetően. A cél, hogy a diákok időt és pénzt spóroljanak a főzésen vizsgaidőszakban és a hétköznapokon egyaránt.
+
+Saját JavaScript kód leírása:
+Recept-kalkulátor
+- Helye: js/calculator.js
+- Működése: Ez a szkript felel a receptek dinamikus adagszámításáért. Egy objektumban tárolja a receptek adatait (hozzávalók, mennyiségek). A felhasználó a modális ablakban módosíthatja a személyek számát (+/- gombokkal vagy beírással), a szkript pedig újraszámolja a hozzávalók mennyiségét az alapértékhez viszonyítva, majd frissíti a DOM-ot az új értékekkel.
+
+Egyéb szkriptek:
+- js/contact.js: A kapcsolat űrlap validációját végzi (mezők ellenőrzése, hibaüzenetek megjelenítése).
+- js/blog.js: A blogbejegyzéseket dinamikusan tölti be egy modális ablakba kattintáskor.
+- js/main.js: A mobil menü kezeléséért és a receptlista szűréséért felel.
+
+Használt betűtípusok:
+Google Fonts (HTML head-ben importálva):
+- Poppins 
+
+
+Felhasznált külső források:
+- Ikonok: Emoji karakterkészlet és saját SVG favicon.

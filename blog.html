@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Dányi Ádám">
+    <meta name="description" content="Konyhai tippek, trükkök és spórolási tanácsok egyetemistáknak. Így főzz olcsón és okosan a kollégiumi konyhában!">
+    <title>Főzési Tippek & Trükkök - Gyors Ételek</title>
+    
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double+Ink:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+
+    <script src="js/blog.js" defer></script>
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">🍜 Gyors Ételek</a>
+            <button class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Főoldal</a></li>
+                <li><a href="receptek.html">Receptlista</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="kapcsolat.html">Kapcsolat</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <header>
+            <div class="page-header">
+                <h1>Konyhai Tippek & Trükkök 💡</h1>
+                <p>Így spórolj időt és pénzt a kollégiumi konyhában!</p>
+            </div>
+        </header>
+
+        <div class="filter-container">
+            <button class="filter-btn active" data-filter="all">Összes</button>
+            <button class="filter-btn" data-filter="technika">Technika</button>
+            <button class="filter-btn" data-filter="sporolas">Spórolás</button>
+            <button class="filter-btn" data-filter="tarolas">Tárolás</button>
+            <button class="filter-btn" data-filter="eszkoz">Eszközök</button>
+        </div>
+
+        <div class="blog-section">
+            <div class="recipe-grid"> 
+                
+                <article class="blog-card" data-category="technika" data-id="rizs">
+                    <div class="blog-image">🍚</div>
+                    <div class="blog-content">
+                        <span class="blog-tag technika">Technika</span>
+                        <h3>Tökéletes rizs mikróban?</h3>
+                        <p>Nincs rizsfőződ és lusta vagy vizet forralni? Mutatjuk, hogyan lesz pergős a rizs 12 perc alatt a mikróban.</p>
+                        <button class="read-more">Olvass tovább &rarr;</button>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-category="sporolas" data-id="bevasarlas">
+                    <div class="blog-image">🛒</div>
+                    <div class="blog-content">
+                        <span class="blog-tag sporolas">Spórolás</span>
+                        <h3>A 3000 Ft-os nagybevásárlás</h3>
+                        <p>Hogyan töltsd fel a hűtőt egy hétre minimális keretből? Íme a lista, ami megmenti a hónap végét.</p>
+                        <button class="read-more">Olvass tovább &rarr;</button>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-category="tarolas" data-id="fagyasztas">
+                    <div class="blog-image">❄️</div>
+                    <div class="blog-content">
+                        <span class="blog-tag tarolas">Tárolás</span>
+                        <h3>Mit fagyassz le és mit ne?</h3>
+                        <p>Megmaradt a pörkölt? Vagy a kenyér? Tippek, hogy semmi ne végezze a kukában.</p>
+                        <button class="read-more">Olvass tovább &rarr;</button>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-category="eszkoz" data-id="eszkozok">
+                    <div class="blog-image">🔪</div>
+                    <div class="blog-content">
+                        <span class="blog-tag eszkoz">Eszközök</span>
+                        <h3>Kollégiumi alapfelszerelés</h3>
+                        <p>Mire van tényleg szükséged? (Spoiler: nem kell 5 féle kés, de egy jó serpenyő kötelező!)</p>
+                        <button class="read-more">Olvass tovább &rarr;</button>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-category="technika" data-id="tojas">
+                    <div class="blog-image">🥚</div>
+                    <div class="blog-content">
+                        <span class="blog-tag technika">Technika</span>
+                        <h3>Tojásfőzés kisokos</h3>
+                        <p>Lágy, kemény, buggyantott? Így csináld, hogy mindig tökéletes legyen, és könnyen tudd pucolni.</p>
+                        <button class="read-more">Olvass tovább &rarr;</button>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-category="technika" data-id="fuszerek">
+                    <div class="blog-image">🧂</div>
+                    <div class="blog-content">
+                        <span class="blog-tag technika">Ízesítés</span>
+                        <h3>Fűszerek, amik feldobják az unalmas kaját</h3>
+                        <p>A só és bors kevés. Ez az 5 fűszer legyen a polcodon, és bármiből gourmet vacsorát varázsolhatsz.</p>
+                        <button class="read-more">Olvass tovább &rarr;</button>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+
+        <div id="blog-modal" class="modal-overlay">
+            <div class="modal-content blog-modal-content">
+                <button class="modal-close">&times;</button>
+                <div class="blog-modal-header">
+                    <div id="modal-icon" class="blog-modal-icon"></div>
+                    <div>
+                        <span id="modal-tag" class="blog-tag"></span>
+                        <h2 id="modal-title">Cikk címe</h2>
+                    </div>
+                </div>
+                <div class="modal-body blog-text" id="modal-body">
+                    </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>🍜 Gyors Ételek</h3>
+                <p>Olcsó, gyors és finom receptek egyetemistáknak.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Hasznos Linkek</h4>
+                <ul>
+                    <li><a href="index.html">Főoldal</a></li>
+                    <li><a href="receptek.html">Receptlista</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="kapcsolat.html">Kapcsolat</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Kövess minket</h4>
+                <div class="social-links">
+                    <a href="#">f</a><a href="#">ig</a><a href="#">tt</a>
+                </div>
+                <p>📧 info@gyorsetelek.hu</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>2025 Gyors ételek</p>
+        </div>
+    </footer>
+
+</body>
+</html>
