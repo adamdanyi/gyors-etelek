@@ -8,9 +8,10 @@ menuToggle.addEventListener('click', () => {
 
 
 
-const filterBtns = document.querySelectorAll('.filter-btn');
-const recipeCards = document.querySelectorAll('.recipe-card');
 
+const recipeCards = document.querySelectorAll('.recipe-card');
+if (recipeCards.length > 0) {
+    const filterBtns = document.querySelectorAll('.filter-btn');
 
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -36,8 +37,9 @@ const recipeCards = document.querySelectorAll('.recipe-card');
             });
         });
     });
-
+}
 const recipeModal = document.getElementById('recipe-modal');
+if (recipeModal) {
 const closeModalBtn = document.querySelector('.modal-close');
 const servingsInput = document.getElementById('servings-input');
 const incBtn = document.getElementById('inc-servings');
@@ -114,4 +116,5 @@ if (servingsInput) {
             updateCalculator(currentRecipeId, servingsInput.value);
 }
     });
+}
 }
